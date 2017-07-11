@@ -57,5 +57,5 @@ hello <- function() {
   # Calculating MSE
   MSE.nn <- sum((test.r - pr.nn_)^2)/nrow(test_)
   # Compare the two MSEs
-  print(paste(MSE.lm,MSE.nn))
+  return(paste(MSE.lm,MSE.nn))
 }
