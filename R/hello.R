@@ -47,7 +47,7 @@ hello <- function() {
   f <- as.formula(paste("medv ~", paste(n[!n %in% "medv"], collapse = " + ")))
   nn <- neuralnet(f,data=train_,hidden=c(5,3),linear.output=T)
   # Visual plot of the model
-  plot(nn)
+  # plot(nn)
   # Predict
   pr.nn <- compute(nn,test_[,1:13])
   # Results from NN are normalized (scaled)
@@ -57,5 +57,5 @@ hello <- function() {
   # Calculating MSE
   MSE.nn <- sum((test.r - pr.nn_)^2)/nrow(test_)
   # Compare the two MSEs
-  # print(paste(MSE.lm,MSE.nn))
+  print(paste(MSE.lm,MSE.nn))
 }
